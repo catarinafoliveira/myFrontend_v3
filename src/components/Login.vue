@@ -44,6 +44,8 @@
 </template>
 
 <script>
+import { jwtDecode } from 'jwt-decode';
+
 export default {
     data() {
         return {
@@ -75,6 +77,7 @@ export default {
                     
                     if (data.userToken) {
                         localStorage.setItem('userToken', data.userToken);
+                        localStorage.setItem('decodedUser', JSON.stringify(jwtDecode(data.userToken)));
                         this.$router.push('/');
                     } else {
                         this.setErrorMessage('Failed to login', 'error');

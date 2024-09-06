@@ -24,5 +24,14 @@ const router = createRouter({
 });
 
 const app = createApp(App);
+
+app.mixin({
+    methods: {
+        getUser() {
+            return JSON.parse(localStorage.getItem('decodedUser'));
+        }
+    }
+});
+
 app.use(router);
 app.mount('#app');
