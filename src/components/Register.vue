@@ -1,6 +1,6 @@
 <template>
-    <div class="register-container d-flex justify-content-end align-items-center">
-        <form @submit.prevent="register" class="register-form">
+    <div class="right-container d-flex justify-content-end align-items-center">
+        <form @submit.prevent="register" class="right-form">
             <!-- User name field -->
             <div class="row mb-3">
                 <div class="col-md-4">
@@ -248,20 +248,6 @@ export default {
 </script>
 
 <style scoped>
-.register-container {
-    padding-top: 10px;
-}
-
-.register-form {
-    width: 100%;
-    max-width: 360px;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
 .input-group-text {
     cursor: pointer;
 }

@@ -1,6 +1,6 @@
 <template>
-    <div class="login-container d-flex justify-content-end align-items-center">
-        <form @submit.prevent="login" class="login-form">
+    <div class="right-container d-flex justify-content-end align-items-center">
+        <form @submit.prevent="login" class="right-form">
             <div class="row mb-3">
                 <div class="col-md-4">
                     <label for="username" class="form-label">Username:</label>
@@ -95,27 +95,3 @@ export default {
     },
 };
 </script>
-
-<style scoped>
-.login-container {
-    padding-top: 10px; /* Add some padding from the top */
-}
-
-.login-form {
-    width: 100%; /* Full width on small screens */
-    max-width: 360px; /* Limit the form width to 360px */
-    padding: 20px; /* Add some padding */
-    background-color: #fff; /* White background */
-    border: 1px solid #ddd; /* Light gray border */
-    border-radius: 5px; /* Rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-}
-
-/* Ensure that on small screens the form takes up the entire width */
-@media (max-width: 768px) {
-    .login-form {
-        margin-right: 0; /* Remove right margin on small screens */
-        margin-left: auto; /* Center form horizontally on small screens */
-    }
-}
-</style>
