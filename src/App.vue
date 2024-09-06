@@ -13,11 +13,15 @@
       <li class="ms-auto"></li>
       
       <!-- Right-aligned tabs -->
-      <li class="nav-item">
+      <li v-if="this.getUser()==null" class="nav-item">
         <router-link class="nav-link" :class="{ active: $route.path === '/register' }" to="/register">Register</router-link>
       </li>
-      <li class="nav-item">
+      <li v-if="this.getUser()==null" class="nav-item">
         <router-link class="nav-link" :class="{ active: $route.path === '/login' }" to="/login">Login</router-link>
+      </li>
+
+      <li v-if="this.getUser()!=null" class="nav-item">
+        <button class="btn btn-danger" @click="logout">Logout</button>
       </li>
     </ul>
     
@@ -30,6 +34,13 @@
 <script>
 export default {
   name: 'App',
+  methods: {
+    logout(){
+      console.log("Deleting");
+      localStorage.clear();
+      window.location.reload();
+    }
+  }
 };
 </script>
 

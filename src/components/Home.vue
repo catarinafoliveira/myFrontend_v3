@@ -1,3 +1,3 @@
 <template>
-    <p>Username: {{ this.getUser().username }}</p>
+    <p v-if="this.getUser()!=null">Username: {{ this.getUser().username }}</p>
 </template>
