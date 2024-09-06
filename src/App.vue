@@ -14,7 +14,7 @@
       
       <!-- Right-aligned tabs -->
       <li class="nav-item">
-        <router-link class="nav-link" :class="{ active: $route.path === '/' }" to="/">Register</router-link>
+        <router-link class="nav-link" :class="{ active: $route.path === '/register' }" to="/register">Register</router-link>
       </li>
       <li class="nav-item">
         <router-link class="nav-link" :class="{ active: $route.path === '/login' }" to="/login">Login</router-link>
