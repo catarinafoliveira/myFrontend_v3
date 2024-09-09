@@ -78,6 +78,7 @@ export default {
                     if (data.userToken) {
                         localStorage.setItem('userToken', data.userToken);
                         localStorage.setItem('decodedUser', JSON.stringify(jwtDecode(data.userToken)));
+                        console.log(localStorage.getItem('decodedUser'));
                         this.$router.push('/');
                     } else {
                         this.setErrorMessage('Failed to login', 'error');
