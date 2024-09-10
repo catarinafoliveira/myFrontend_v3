@@ -69,6 +69,13 @@ app.mixin({
                 return null;
             }
             return user.idCard;
+        },
+        getUserLicence() {
+            const user = this.getUser();
+            if(user==null){
+                return null;
+            }
+            return user.licence;
         }
     }
 });

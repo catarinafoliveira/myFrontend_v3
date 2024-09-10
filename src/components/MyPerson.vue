@@ -155,12 +155,7 @@ import { Modal } from 'bootstrap';
 export default {
     data() {
         return {
-            selectedAction: null,
-            personId: '',
-            personName: '',
-            personIdCard: '',
-            updateData: '',
-            apiResponse: null,
+            selectedAction:'',
             person: {
                 idCard:'',
                 licence: '',
@@ -308,29 +303,6 @@ export default {
                 }
             } catch (error) {
                 this.setMessage("Error deleting person: " + error.message, 'error');
-            }
-        },
-        selectAction(action) {
-            this.selectedAction = action;
-            this.apiResponse = null; 
-        },
-        async handleAction() {
-            let response;
-            try {
-                if (this.selectedAction === 'getById') {
-                    response = await axios.get(`/api/persons/id/${this.personId}`);
-                } else if (this.selectedAction === 'getByName') {
-                    response = await axios.get(`/api/persons/name/${this.personName}`);
-                } else if (this.selectedAction === 'getByIdCard') {
-                    response = await axios.get(`/api/persons/idcard/${this.personIdCard}`);
-                } else if (this.selectedAction === 'updatePerson') {
-                    response = await axios.put(`/api/persons/${this.personId}`, JSON.parse(this.updateData));
-                } else if (this.selectedAction === 'deletePerson') {
-                    response = await axios.delete(`/api/persons/${this.personId}`);
-                }
-                this.apiResponse = response.data;
-            } catch (error) {
-                this.apiResponse = error.response?.data || error.message;
             }
         },
     },
