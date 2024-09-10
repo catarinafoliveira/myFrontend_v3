@@ -63,7 +63,7 @@
                             </div>
                         </div>
                     </form>    
-
+                    
                     <!-- Add form -->
                     <form v-if="add" @submit.prevent="showConfirmModal">
                         <h5>Add Person:</h5>
@@ -380,15 +380,19 @@ export default {
         }
     },
     mounted() {
-        this.fetchData();
-        const modalElement = document.getElementById('deleteModal');
-        this.deleteModalInstance = new Modal(modalElement);
-        
-        const addModalElement = document.getElementById('confirmModal');
-        this.addModalInstance = new Modal(addModalElement);
-        
-        const editModalElement = document.getElementById('confirmEditModal');
-        this.editModalInstance = new Modal(editModalElement);
+        if(this.getUser()==null){
+            this.$router.push('/login');
+        } else {
+            this.fetchData();
+            const modalElement = document.getElementById('deleteModal');
+            this.deleteModalInstance = new Modal(modalElement);
+            
+            const addModalElement = document.getElementById('confirmModal');
+            this.addModalInstance = new Modal(addModalElement);
+            
+            const editModalElement = document.getElementById('confirmEditModal');
+            this.editModalInstance = new Modal(editModalElement);
+        }
     }
 };
 </script>

@@ -16,6 +16,9 @@ import Register from './components/Register.vue';
 import Persons from './components/Persons.vue';
 import Drivers from './components/Drivers.vue';
 import Cars from './components/Cars.vue';
+import MyCar from './components/MyCar.vue';
+import MyDriver from './components/MyDriver.vue';
+import MyPerson from './components/MyPerson.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -26,6 +29,9 @@ const router = createRouter({
         { path: '/persons', component: Persons },
         { path: '/drivers', component: Drivers },
         { path: '/cars', component: Cars },
+        { path: '/person', component: MyPerson },
+        { path: '/driver', component: MyDriver },
+        { path: '/mycars', component: MyCar },
     ]
 });
 
@@ -42,6 +48,27 @@ app.mixin({
                 return null;
             }
             return user.userRole;
+        },
+        getUserId() {
+            const user = this.getUser();
+            if(user==null){
+                return null;
+            }
+            return user.id;
+        },
+        getUserName() {
+            const user = this.getUser();
+            if(user==null){
+                return null;
+            }
+            return user.username;
+        },
+        getUserIdCard() {
+            const user = this.getUser();
+            if(user==null){
+                return null;
+            }
+            return user.idCard;
         }
     }
 });

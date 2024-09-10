@@ -508,17 +508,21 @@ export default {
         }
     },
     mounted() {
-        this.fetchData();
-        this.getDrivers();
-        
-        const addModalElement = document.getElementById('confirmModal');
-        this.addModalInstance = new Modal(addModalElement);
-        
-        const editModalElement = document.getElementById('confirmEditModal');
-        this.editModalInstance = new Modal(editModalElement);
-        
-        const modalElement = document.getElementById('deleteModal');
-        this.deleteModalInstance = new Modal(modalElement);
+        if(this.getUser()==null){
+            this.$router.push('/login');
+        } else {
+            this.fetchData();
+            this.getDrivers();
+            
+            const addModalElement = document.getElementById('confirmModal');
+            this.addModalInstance = new Modal(addModalElement);
+            
+            const editModalElement = document.getElementById('confirmEditModal');
+            this.editModalInstance = new Modal(editModalElement);
+            
+            const modalElement = document.getElementById('deleteModal');
+            this.deleteModalInstance = new Modal(modalElement);
+        }
     },
 };
 </script>
