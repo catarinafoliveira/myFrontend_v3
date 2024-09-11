@@ -103,7 +103,6 @@
             </div>
         </div>
     </div>
-    
     <!-- Footer -->
     <footer class="footer fixed-bottom">
         <div class="container text-center">
@@ -111,8 +110,7 @@
                 {{ message }}
             </div>
         </div>
-    </footer>
-    
+    </footer>   
     <!-- Edit Confirmation Modal -->
     <div class="modal fade" id="confirmEditModal" tabindex="-1" aria-labelledby="confirmEditModalLabel" aria-hidden="true">
         <div class="modal-dialog">
